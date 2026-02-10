@@ -1,0 +1,14 @@
+services:
+  nginx:
+    environment:
+      - NGINX_ENVSUBST_OUTPUT_DIR=/etc/nginx/conf.d
+
+  backend:
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 512M
+        reservations:
+          cpus: '0.25'
+          memory: 128M
